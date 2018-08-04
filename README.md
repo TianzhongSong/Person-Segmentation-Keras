@@ -29,6 +29,8 @@ For visiualsizing the predictions, you can use the follow command
 
 #### Unet
 
+mIU: 0.8918
+
 Origin images, ground truth images and predictions.
 
 ![predictions](https://github.com/TianzhongSong/Person-Segmentation-Keras/blob/master/predicts.png)
