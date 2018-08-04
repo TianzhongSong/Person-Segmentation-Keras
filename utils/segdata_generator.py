@@ -50,13 +50,19 @@ def generator(root_path, path_file, batch_size, n_classes, input_height, input_w
     f = open(path_file, 'r')
     items = f.readlines()
     f.close()
-    while True:
-        shuffled_items = []
-        index = [n for n in range(len(items))]
-        random.shuffle(index)
-        for i in range(len(items)):
-            shuffled_items.append(items[index[i]])
+    if train:
+        while True:
+            shuffled_items = []
+            index = [n for n in range(len(items))]
+            random.shuffle(index)
+            for i in range(len(items)):
+                shuffled_items.append(items[index[i]])
+            for j in range(len(items) // batch_size):
+                x, y = get_batch(shuffled_items[j * batch_size:(j + 1) * batch_size],
+                                 root_path, n_classes, input_height, input_width)
+                yield np.array(x), np.array(y)
+    else:
         for j in range(len(items) // batch_size):
-            x, y = get_batch(shuffled_items[j * batch_size:(j + 1) * batch_size],
+            x, y = get_batch(items[j * batch_size:(j + 1) * batch_size],
                              root_path, n_classes, input_height, input_width)
             yield np.array(x), np.array(y)
