@@ -21,6 +21,10 @@ An example for training Unet.
 
     python train_segmentation.py --model='unet'
 
+For evaluating you can use the follow command,
+
+    python predict.py --model='unet'
+    
 ### Results
 
 #### Unet
