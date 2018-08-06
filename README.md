@@ -1,7 +1,9 @@
 # Person-Segmentation-Keras
 Person segmentation with Keras (SegNet, Unet, etc.)
 
-### Dataset
+## Dataset
+
+### Person segmentation
 
 [HumanParsing-Dataset](https://github.com/lemondan/HumanParsing-Dataset) is adopted in this repo.
 
@@ -13,7 +15,40 @@ I use 12706 images of HumanParsing-Dataset as training set, the remaining images
 
 During training, i resize images with unchanged aspect ratio using padding, for details you can see [this script](https://github.com/TianzhongSong/Person-Segmentation-Keras/blob/master/utils/segdata_generator.py).
 
-### Usage
+### Human parsing
+
+Origin HumanParsing-Dataset contains 16+1 object classes. 
+
+    background     0
+    hat            1
+    hair           2 
+    sunglass       3
+    upper-clothes  4
+    skirt          5
+    pants          6
+    dress          7
+    belt           8
+    left-shoe      9
+    right-shoe     10
+    face           11
+    left-leg       12
+    right-leg      13
+    left-arm       14
+    right-arm      15
+    bag            16
+    scarf          17
+
+I have simplified the parsing task. Now it contains 4 + 1 classes.
+
+    background     0 (background, bag)
+    head           1 (hat, hair, sunglass, face, scarf)
+    upper body     2 (upper-clothes)
+    both hands     3 (left-arm, right-arm)
+    lower body     4 (skirt, pants, dress, belt, left-shoe, right-shoe, left-leg, right-leg)
+
+New label images can be downloaded in this link 
+
+## Usage
 
 All models are defined in 'models' directory.
 
@@ -25,9 +60,11 @@ For visiualsizing the predictions, you can use the follow command
 
     python predict.py --model='unet'
     
-### Results
+## Results
 
-#### Unet
+### Unet
+
+#### Person segmentation
 
 mIU: 0.8918
 
@@ -43,11 +80,17 @@ Val loss during training.
 
 ![val loss unet](https://github.com/TianzhongSong/Person-Segmentation-Keras/blob/master/results/unet_loss.png)
 
-#### SegNet
+#### Human parsing
+
+Origin images, ground truth images and predictions.
+
+![predictions](https://github.com/TianzhongSong/Person-Segmentation-Keras/blob/master/seg_predicts.png)
+
+### SegNet
 
 Todo
 
-### Reference
+## Reference
 
 [image-segmentation-keras](https://github.com/divamgupta/image-segmentation-keras)
 
