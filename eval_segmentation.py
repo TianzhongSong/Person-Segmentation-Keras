@@ -8,7 +8,7 @@ import argparse
 def compute_iou(gt, pt):
     intersection = np.sum(gt * pt)
     u = gt + pt
-    u[u >= 0] = 1
+    u[u > 0] = 1
     union = np.sum(u)
     return intersection / union
 
