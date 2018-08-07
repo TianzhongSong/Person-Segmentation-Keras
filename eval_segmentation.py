@@ -52,15 +52,15 @@ if __name__ == '__main__':
         pbdr.update(1)
         pr = m.predict(x)[0]
         pr = pr.reshape((input_height, input_width, n_classes)).argmax(axis=2)
-        y = y[:, :, 1]
         pt = pr.reshape((input_height * input_width))
-        gt = y.reshape((input_height * input_width))
         for c in range(1, n_classes):
+            gt = y[:, :, c]
+            gt = gt.reshape((input_height * input_width))
             gt_img = np.zeros_like(y)
             pt_img = np.zeros_like(y)
-            gt_img[:] += (gt[:] == c).astype('uint8')
+            gt_img[:] += (gt[:] == 1).astype('uint8')
             pt_img[:] += (gt[:] == c).astype('uint8')
-            if (pt_img == gt_img).all():
+            if not (pt_img == np.zeros_like(pt_img)).all() or not (gt_img == np.zeros_like(gt_img)).all() :
                 iou[c - 1] += compute_iou(pt_img[0], gt_img[0])
                 count[c - 1] += 1
     miou = 0.
