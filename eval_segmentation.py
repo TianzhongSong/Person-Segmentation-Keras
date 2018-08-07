@@ -6,14 +6,10 @@ import argparse
 
 
 def compute_iou(gt, pt):
-    intersection = 0
-    union = 0
-    for i, j in zip(gt, pt):
-        if i == 1 or j == 1:
-            union += 1
-        if i == 1 and j == 1:
-            intersection += 1
-
+    intersection = np.sum(gt * pt)
+    u = gt + pt
+    u[u >= 0] = 1
+    union = np.sum(u)
     return intersection / union
 
 
