@@ -61,7 +61,7 @@ if __name__ == '__main__':
             gt_img[:] += (gt[:] == 1).astype('uint8')
             pt_img[:] += (gt[:] == c).astype('uint8')
             if not (pt_img == np.zeros_like(pt_img)).all() or not (gt_img == np.zeros_like(gt_img)).all() :
-                iou[c - 1] += compute_iou(pt_img[0], gt_img[0])
+                iou[c - 1] += compute_iou(pt_img, gt_img)
                 count[c - 1] += 1
     miou = 0.
     for c in range(1, n_classes):
