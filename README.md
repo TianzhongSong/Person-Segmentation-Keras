@@ -82,6 +82,36 @@ Val loss during training.
 
 #### Human parsing
 
+<table width="95%">
+  <tr>
+    <td></td>
+    <td align=center><b>Part</td>
+    <td align=center>mIoU</td>
+  </tr>
+
+  <tr>
+    <td rowspan=5 align=center width="10%"><b>Unet</td>
+    <td align=center width="10%"><b>head</td>
+    <td align=center width="10%"><b>0.66476</td>
+  </tr>
+  <tr>
+    <td align=center width="10%"><b>upper body</td>
+    <td align=center width="10%"><b>0.48639</td>
+  </tr>
+  <tr>
+    <td align=center width="10%"><b>both hands</td>
+    <td align=center width="10%"><b>0.27016</td>
+  </tr>
+  <tr>
+    <td align=center width="10%"><b>lower body</td>
+    <td align=center width="10%"><b>0.66536</td>
+  </tr>
+  <tr>
+    <td align=center width="10%"><b>mean</td>
+    <td align=center width="10%"><b>0.52167</td>
+  </tr>
+</table>
+
 Origin images, ground truth images and predictions.
 
 ![predictions](https://github.com/TianzhongSong/Person-Segmentation-Keras/blob/master/seg_predicts.png)
