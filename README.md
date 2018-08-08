@@ -46,7 +46,7 @@ I have simplified the parsing task. Now it contains 4 + 1 classes.
     both hands     3 (left-arm, right-arm)
     lower body     4 (skirt, pants, dress, belt, left-shoe, right-shoe, left-leg, right-leg)
 
-New label images can be downloaded in this link https://pan.baidu.com/s/1jhqpOn8oBmiJiwzohhkfww passwd: gamc
+New label images can be downloaded from this link https://pan.baidu.com/s/1jhqpOn8oBmiJiwzohhkfww passwd: gamc
 
 ## Usage
 
