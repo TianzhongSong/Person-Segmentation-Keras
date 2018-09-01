@@ -11,6 +11,8 @@ Origin HumanParsing-Dataset contains 16+1 object classes. But in this repo, i ju
 
 I generate new label images by my self, you can download new label imgages at https://pan.baidu.com/s/1Y6bKUznsVc7xNWb9tqWaHA passwd: p8ks
 
+Of course you can generate label images by yourself using [convert_labels.py](https://github.com/TianzhongSong/Person-Segmentation-Keras/blob/master/convert_labels.py) , [gen_train_test_list.py](https://github.com/TianzhongSong/Person-Segmentation-Keras/blob/master/gen_train_test_list.py).
+
 I use 12706 images of HumanParsing-Dataset as training set, the remaining images as test set.
 
 During training, i resize images with unchanged aspect ratio using padding, for details you can see [this script](https://github.com/TianzhongSong/Person-Segmentation-Keras/blob/master/utils/segdata_generator.py).
