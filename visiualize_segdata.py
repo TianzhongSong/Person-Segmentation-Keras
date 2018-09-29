@@ -14,8 +14,8 @@ def imageSegmentationGenerator(images_path, segs_path, n_classes):
     segmentations = glob.glob(segs_path + "*.jpg") + glob.glob(segs_path + "*.png") + glob.glob(segs_path + "*.jpeg")
     segmentations.sort()
 
-    # colors = [(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)) for _ in range(n_classes)]
-    colors = np.array([[0, 0, 0], [255, 255, 255]])
+    colors = [(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)) for _ in range(n_classes)]
+    # colors = np.array([[0, 0, 0], [255, 255, 255]])
 
     assert len(images) == len(segmentations)
 
