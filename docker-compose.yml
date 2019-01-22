@@ -1,0 +1,12 @@
+version: "3"
+services:
+  app:
+    container_name: persion_seq
+    build: .
+    command: python train_segmentation.py --model='unet'
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/data/src/Person-Segmentation-Keras
+      - /Users/weijiangchen/datasets:/data/datasets
+
