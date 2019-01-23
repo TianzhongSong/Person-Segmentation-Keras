@@ -7,7 +7,7 @@ from utils.segdata_generator import generator
 
 def predict_segmentation():
     n_classes = 2
-    images_path = '/home/deep/datasets/'
+    images_path = '../../datasets/segmentation/'
     val_file = './data/seg_test.txt'
     input_height = 256
     input_width = 256
